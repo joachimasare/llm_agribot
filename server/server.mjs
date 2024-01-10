@@ -2,11 +2,9 @@ import express from 'express';
 import fetch from 'node-fetch';
 import { SerialPort } from 'serialport';
 
-
 const app = express();
 app.use(express.json());
 
-// Ensure this is the correct port name
 const portName = 'COM9';
 
 const port = new SerialPort({
@@ -33,7 +31,7 @@ app.post('/sendCommand', async (req, res) => {
   const gptResponse = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer YOUR_OPENAI_API_KEY`,
+      'Authorization': `Bearer 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`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
