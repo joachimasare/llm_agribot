@@ -1,8 +1,10 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import { SerialPort } from 'serialport';
+import cors from 'cors';
 
 const app = express();
+app.use(cors()); 
 app.use(express.json());
 
 const portName = 'COM9';
@@ -54,4 +56,4 @@ app.post('/sendCommand', async (req, res) => {
   res.send({ message: 'Command sent to robot', command: robotCommand });
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(5000, () => console.log('Server running on port 5000'));
