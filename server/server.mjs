@@ -17,7 +17,7 @@ const port = new SerialPort({
 app.post('/sendCommand', async (req, res) => {
   const userInput = req.body.command;
 
-  // Enhanced prompt with examples for few-shot learning
+  // Enhanced prompt 
   const prompt = `I am a program that translates natural language instructions into specific commands for a robotic movement. Here are some examples:
 
   User input: "move in a square"
